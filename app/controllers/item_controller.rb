@@ -11,7 +11,7 @@ class ItemController < ApplicationController
   end
 
   def create
-    @item = Item.new(params.require(:item).permit(:title, :description, :image, :meta)) 
+    @item = Item.new(params.require(:item).permit(:title, :description, :image, :url)) 
     if @item.save
       redirect_to root_path
     else
